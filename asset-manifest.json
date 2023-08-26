@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/gitblog/static/css/main.073c9b0a.css",
-    "main.js": "/gitblog/static/js/main.452259ea.js",
-    "static/js/787.96b01028.chunk.js": "/gitblog/static/js/787.96b01028.chunk.js",
-    "static/media/logo.svg": "/gitblog/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/gitblog/index.html",
-    "main.073c9b0a.css.map": "/gitblog/static/css/main.073c9b0a.css.map",
-    "main.452259ea.js.map": "/gitblog/static/js/main.452259ea.js.map",
-    "787.96b01028.chunk.js.map": "/gitblog/static/js/787.96b01028.chunk.js.map"
+    "main.css": "/static/css/main.073c9b0a.css",
+    "main.js": "/static/js/main.0f535d71.js",
+    "static/js/787.96b01028.chunk.js": "/static/js/787.96b01028.chunk.js",
+    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/index.html",
+    "main.073c9b0a.css.map": "/static/css/main.073c9b0a.css.map",
+    "main.0f535d71.js.map": "/static/js/main.0f535d71.js.map",
+    "787.96b01028.chunk.js.map": "/static/js/787.96b01028.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.452259ea.js"
+    "static/js/main.0f535d71.js"
   ]
 }
