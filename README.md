@@ -5,6 +5,7 @@ github blog
 - TypeScript
 - Vscode
 
+/* 초기설정 */
 1. npx create-react-app [프로젝트명] --template typescript
 2. cd 프로젝트명
 3. npm run build
@@ -18,3 +19,5 @@ github blog
 
 8. 깃허브 - settings - pages
  - Branch를 main에서 gh-pages로 변경 후 Save
+
+/* CI/CD : Github Action */
