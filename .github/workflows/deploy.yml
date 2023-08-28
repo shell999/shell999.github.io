@@ -11,6 +11,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./gitblog
     permissions:
       contents: write
     concurrency:
@@ -31,8 +34,8 @@ jobs:
         id: cache
         uses: actions/cache@v3
         with:
-          path: '**/gitblog/node_mudules'                                             # 캐싱할 디렉토리
-          key: ${{ runner.os }}-node-${{ hashFiles('**/gitblog/package-lock.json') }}
+          path: '**/node_mudules'                                             # 캐싱할 디렉토리
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
           # chache hit가 발생하지 않을 경우, restore-keys에 있는 것을 꺼냅니다. (단, npm ci 명령은 실행)
           # 기존의 node_modules 캐시를 기반으로 추가된 패키지만 설치, 처음부터 node_modules 폴더를 생성하는 것보다 시간 단축
           restore-keys: |
@@ -55,4 +58,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./gitblog/build
+          publish_dir: ./build
