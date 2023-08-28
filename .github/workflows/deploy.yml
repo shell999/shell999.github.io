@@ -47,13 +47,8 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
 
       # 빌드 수행
-      # react-router-dom의 BrowserRouter를 지원하기 위해
-      # index.html을 복사하여 404.html에서도 사용
       - name: Build
-        run: |
-          npm run build
-          cp ./build/index.html 
-        # ./build/404.html
+        run: npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
