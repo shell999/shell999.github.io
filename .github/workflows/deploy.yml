@@ -29,7 +29,7 @@ jobs:
       # 이게 없으면 workflow를 실행할 때 마다 node_modules를 다시 생성
       - name: Cache node_modules
         id: cache
-        uses: action/cache@v3
+        uses: actions/cache@v3
         with:
           path: '**/gitblog/node_mudules'                                             # 캐싱할 디렉토리
           key: ${{ runner.os }}-node-${{ hashFiles('**/gitblog/package-lock.json') }}
