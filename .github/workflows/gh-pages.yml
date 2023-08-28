@@ -1,33 +1,55 @@
+# workflow name
 name: github pages
 
+# workflow 실행조건
 on:
+  # 해당 branch에 push될때마다 실행
   push:
-    branches:
-      - main
+    branches: ['main']
 
+# 실행 jobs
 jobs:
   deploy:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}
+      cancel-in-progress: true      # 같은 그룹에서 이전 실행중 작업을 취소, 빌드는 최신기준으로 함
+
     steps:
-      - name: Checkout source code.
-        uses: actions/checkout@v2
+      - name: Use repository source
+        uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build
-        run: npm run build
-
-      - name: Cache dependencies
-        uses: actions/cache@v2
+      - name: Use node.js
+        uses: actions/setup-node@v3
         with:
-          path: ~/.npm
+          node-version: 18
+
+      # 이게 없으면 workflow를 실행할 때 마다 node_modules를 다시 생성
+      - name: Cache node_modules
+        id: cache
+        uses: action/cache@v3
+        with:
+          path: '**/gitblog/node_mudules'                                             # 캐싱할 디렉토리
           key: ${{ runner.os }}-node-${{ hashFiles('**/gitblog/package-lock.json') }}
+          # chache hit가 발생하지 않을 경우, restore-keys에 있는 것을 꺼냅니다. (단, npm ci 명령은 실행)
+          # 기존의 node_modules 캐시를 기반으로 추가된 패키지만 설치, 처음부터 node_modules 폴더를 생성하는 것보다 시간 단축
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - run: npm ci
-      - run: npm run build
+      - name: Install dependencies
+        run: npm ci
+        # cache hit가 발생한 경우 (즉, package-lock.json이 변경되지 않은 경우) npm ci 실행은 skip
+        if: steps.cache.outputs.cache-hit != 'true'
+
+      # 빌드 수행
+      # react-router-dom의 BrowserRouter를 지원하기 위해
+      # index.html을 복사하여 404.html에서도 사용
+      - name: Build
+        run: |
+          npm run build
+          cp ./build/index.html ./build/404.html
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
