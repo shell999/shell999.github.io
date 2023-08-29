@@ -7,7 +7,7 @@ github blog
 - TypeScript
 - Vscode
 
-/* 초기설정 */
+## 초기설정
 1. npx create-react-app [프로젝트명] --template typescript
 2. cd 프로젝트명
 3. npm run build

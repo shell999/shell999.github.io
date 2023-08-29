@@ -44,3 +44,42 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+
+# Directory
+
+## assets
+- image, font
+- Used inside components (need Compile)
+- Used in index.html is located in publish (need not Compile)
+
+## components
+- Reuse component
+- Classified into subfolders according to type
+
+## config
+- Config file
+
+## constants
+- Define common use constants
+
+## hooks
+- Custom hook
+
+## pages
+- Use react router
+- Page components
+
+## services
+- API
+
+## store
+- Use react redux
+
+## styles
+- CSS file
+
+## utils
+- Regular expression patterns
+- common functions
