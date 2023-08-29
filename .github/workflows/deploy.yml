@@ -54,4 +54,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./gitblog/build
+          publish_dir: ./gitblog/build              # default 경로를 설정했지만 publish 경로는 찾아가지 못함, 직접 경로를 맞춰줘야함

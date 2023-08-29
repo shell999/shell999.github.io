@@ -2,6 +2,8 @@
 github blog
 
 - React.js
+- React Router
+- React Redux
 - TypeScript
 - Vscode
 
@@ -19,5 +21,3 @@ github blog
 
 8. 깃허브 - settings - pages
  - Branch를 main에서 gh-pages로 변경 후 Save
-
-/* CI/CD : Github Action */
