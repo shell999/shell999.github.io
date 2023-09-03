@@ -83,3 +83,28 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ## utils
 - Regular expression patterns
 - common functions
+
+
+# UI/UX
+
+## Top Nav
+- main page 이동
+
+## Profile
+- 소개글
+
+## Category
+- 페이지 목록
+
+## Content
+- 해당 페이지 내용
+
+## Comment
+- 댓글 및 깃허브연동
+
+## Side Nav
+- 구글 애드센스
+- 상단 이동버튼
+- 스크롤 이동시 고정
+
+![alt](./src/assets/Blog%20UI.PNG)
