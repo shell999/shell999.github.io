@@ -1,9 +1,11 @@
 import React from 'react';
-import './assets/App.css';
+import Top from './components/topNav'
+import './styles/App.css';
 
 function App() {
   return (
-    <div>
+    <div className="App">
+      <Top />
     </div>
   );
 }
