@@ -158,6 +158,6 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 - 상단 이동버튼
 - 스크롤 이동시 고정
 
-![alt](./src/assets/Blog%20UI.PNG)
+![alt](./Blog%20UI.PNG)
 
 <br/>
