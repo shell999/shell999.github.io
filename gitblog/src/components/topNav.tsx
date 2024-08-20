@@ -4,7 +4,7 @@ import '../styles/topNav.css'
 function Top() {
     return (
         <div className='topNav'>
-            Top Navi
+            Top Nav
         </div>
     );
 }
